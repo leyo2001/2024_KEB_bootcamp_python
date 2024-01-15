@@ -1,6 +1,20 @@
-a=['a',"b","c"]
+# a = "Inha University"
+# a[5]="u"
+# error
 
-print(a)
 
-#데이터타입 변환가능여부
-#리스트 원소지정
+#ok
+#case-sensitive
+abc = 8
+Abc = 9
+ABC = 6
+print(abc,Abc,ABC)
+
+test9 = 77
+#9test = 77
+_test = 71
+
+#False = 123 #reserve word
+
+
+
