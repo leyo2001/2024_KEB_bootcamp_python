@@ -1,24 +1,12 @@
 
+letter = input('Input alphabet letter: ')
 
-menu = input("1) Fahrenheit - Celsius   2)Celsius -> Fahrenheit     3) Quit program")
+# vowels = { 'a', 'e', 'i', 'o', 'u'} #set
+vowels = "aeiuo" #str
+print(type(vowels))
 
-if menu == '1':
-    fahrenheit = float(input('Input Fahrenheit : '))
-    print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit-32)*5.0/9.0):.4f}C')
-
-
-elif menu =='2':
-    celsius = float(input('Input Celsius : '))
-    print(f'Celsius : {celsius}C, Fahrenheit: {((celsius*0.0/5.0)+32.0):.4f}F')
+if letter in vowels: # in
+    print(f'{letter} is a vowel!')
 
 else:
-    print('Terminate Program.')
-
-
-# temp = []
-# if temp:
-#         print("원소가 존재하는 리스트")
-# else:
-#         print("비어있는 리스트")
-
-
+    print(f'{letter} is a consonant!')
