@@ -1,5 +1,7 @@
 #preview
 subjects = "python c++ database linux"
+print('%e' % 0.7045)
+print(subjects.isalnum())
 subject = input("수강신청과목 입력: ")
 
 try:
