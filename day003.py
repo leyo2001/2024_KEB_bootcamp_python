@@ -5,7 +5,8 @@ i=2
 while i<number:
     if number%i==0:
         cnt+=1
-
+        break
+    print(i,end=' ')
     i+=1
 
 if cnt==0:
