@@ -1,6 +1,6 @@
 drinks_foods = {"위스키": "초콜릿", "와인": "치즈", "소주": "삼겹살", "고량주": "양꼬치"}
 
-drinks_foods_keys = list(drinks_foods)
+drinks_foods_keys = list(drinks_foods)  # == list(drinks_foods.keys())
 #print(drinks_foods_keys)
 
 while True:
