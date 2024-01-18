@@ -1,14 +1,21 @@
-def squares(*n) -> list:
-    """
-    넘겨 받은 수치 데이터들의 거듭제곱 값을 리스트에 담아서 리턴
-    """
-    return [pow(i,2) for i in n]
+# closure
+def out_func(n_out):
+    def in_func():
+        return n_out ** 2
+    return in_func
 
-    #return n**2
+x = out_func(2)
+print(type(x))
+print(x)
+print(x())
 
-def run_function(f,*number) -> list:
-    return f(*number)
 
 
-print(squares(7,5,2))
-print(run_function(squares,9,10))
+
+
+# def out_func(n_out):
+#     def in_func(n_in):
+#         return n_in ** 2
+#     return in_func(n_out)
+#
+# print(out_func(2))
