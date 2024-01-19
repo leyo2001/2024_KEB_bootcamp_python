@@ -1,22 +1,22 @@
-def factorial_repetition(n) -> int:
-    result = 1
-    for i in range(2, n+1):
-        result = result * i
-    return result
+import random
 
-def factorial_recusion(n) -> int:
-    '''
-    재귀함수를 사용한 팩토리얼
-    :param n: 정수, int
-    :return: function, int
-    '''
-    if n == 1:
-        return 1
-    else:
-        return n * factorial_recusion(n-1)
+# numbers = list()
+# for i in range(10):
+#     numbers.append(random.randint(1,100))
 
-number = int(input("number: "))
-print(factorial_repetition(number))
-print(factorial_recusion(number))
-print(globals())
+numbers = [random.randint(1,100) for i in range(10)]
+
+print(numbers)
+try:
+    pick = int(input(f"Input index(0 ~ {len(numbers)-1}): "))
+    print(numbers[pick])
+    print(5/0)
+except IndexError as err:
+    print(f"Out of range : Wrong index number\n {err}")
+except ValueError as err:
+    print(f"Input Only Number\n {err}")
+except ZeroDivisionError as err:
+    print(f"denominator can\'t 0\n {err}")
+except Exception:
+    print("Error occurs")
 
