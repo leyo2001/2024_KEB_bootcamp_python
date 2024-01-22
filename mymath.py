@@ -15,3 +15,9 @@ def isprime(n) -> bool:
                 return False
             i += 1
         return True
+
+def fahreneit_to_celcius(fahrenheit) -> float:
+    return f'{((fahrenheit-32.0)*5.0/9.0):.4f}C'
+
+def celcius_to_fahreneit(celsius) -> float:
+    return f'{((celsius*9.0/5.0)+32.0):.4f}F'
