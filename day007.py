@@ -1,14 +1,35 @@
-class FlyingMixin:
+class FlyingBehavior:
     def fly(self):
-        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
+        return f"하늘을 훨훨 날아갑니다~"
 
-class SwimmingMixin:
+class NoFly(FlyingBehavior):
+    def fly(self):
+        return f'하늘을 날 수 없습니다.'
+
+class FlyWithWings(FlyingBehavior):
+    def fly(self):
+        return f'날개로 하늘을 훨훨 날아갑니다'
+
+class JetPack(FlyWithWings):
+    def fly(self):
+        return f'로켓추진기로 하늘을 날아갑니다'
+
+
+
+
+class SwimmingBehavior:
     def swim(self):
-        return f"{self.__name}이(가) 수영을 합니다."
+        return f"{self._Pokemon__name}이(가) 수영을 합니다."
 
 class Pokemon:
-    def __init__(self, name):
+    def __init__(self, name, hp, fly):
         self.__name = name
+        self.__hp = hp
+        self.fly_behavior = fly
+
+    def set_fly_behavior(self, fly):
+        self.fly_behavior = fly
+
 
     def attack(self):
         print("공격~")
@@ -28,17 +49,27 @@ class Pokemon:
     def __str__(self):
         return self.__name + " 입니다"
     def __add__(self, other):
-        return self.__name + ' + ' + other.__name
+        #return self.__name + ' + ' + other.__name
+        return f'두 포켓몬스터 체력의합은 {self.__hp + other.__hp}입니다.'
 
 
-class Charizard(Pokemon, FlyingMixin):
+class Charizard(Pokemon):
     pass
 
-class Gyarados(Pokemon, SwimmingMixin):
+class Pikachu(Pokemon):
     pass
 
-g1 = Gyarados("갸라도스")
-c1 = Charizard("리자몽")
-print(g1)
-print(c1)
-print(g1+c1)
+
+
+nofly = NoFly()
+p1 = Pikachu("피카츄", 35, nofly)
+wings = FlyWithWings()
+c1 = Charizard("리자몽", 120, wings)
+print(c1.fly_behavior.fly())
+print(p1.fly_behavior.fly())
+print(p1)
+print(p1)
+print(p1+c1)
+p1.set_fly_behavior(JetPack())
+print(p1.fly_behavior.fly())
+
